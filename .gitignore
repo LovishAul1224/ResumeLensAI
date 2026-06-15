@@ -100,3 +100,5 @@ storage/
 # Excalidraw exports
 # =========================
 *.excalidrawlib
+
+frontend/src/firebase.js
