@@ -1,6 +1,102 @@
-venv/
-__pycache__/
-*.pyc
+# =========================
+# Dependencies
+# =========================
+node_modules/
+**/node_modules/
+
+# =========================
+# Build files
+# =========================
+dist/
+build/
+coverage/
+
+# =========================
+# Environment variables
+# =========================
 .env
-temp.pdf
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Backend env files
+backend/.env
+frontend/.env
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# =========================
+# FastAPI / Python caches
+# =========================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# OS files
+# =========================
 .DS_Store
+Thumbs.db
+
+# =========================
+# VS Code
+# =========================
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# =========================
+# JetBrains
+# =========================
+.idea/
+
+# =========================
+# Vite
+# =========================
+.vite/
+
+# =========================
+# Firebase
+# =========================
+.firebase/
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
+*.tmp
+
+# =========================
+# Runtime uploads
+# =========================
+uploads/
+storage/
+
+# =========================
+# Excalidraw exports
+# =========================
+*.excalidrawlib
