@@ -101,4 +101,3 @@ storage/
 # =========================
 *.excalidrawlib
 
-frontend/src/firebase.js
