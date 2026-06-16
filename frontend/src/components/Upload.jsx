@@ -4,6 +4,7 @@ import axios from "axios";
 // In dev, Vite proxy forwards /upload → http://localhost:8000/upload
 // In production, set VITE_API_URL=https://your-backend.com in .env
 const API_BASE = import.meta.env.VITE_API_URL || "";
+console.log("API_BASE =", API_BASE);
 
 export default function Upload({ onResult, loading, setLoading }) {
   const [dragging, setDragging] = useState(false);
