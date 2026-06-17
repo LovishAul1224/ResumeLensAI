@@ -1,0 +1,251 @@
+/* ───────────────────────────────────────────
+   Responsive layout for the authenticated app
+   (Layout sidebar + Dashboard grids)
+   ─────────────────────────────────────────── */
+
+/* ---- App shell ---- */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  width: 220px;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 14px;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.app-main {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 100vh;
+  min-width: 0; /* prevents flex children from overflowing on narrow screens */
+}
+
+/* ---- Dashboard page padding ---- */
+.dash-page {
+  padding: 28px 32px;
+}
+
+/* ---- Dashboard header ---- */
+.dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* ---- Score + breakdown grid ---- */
+.dash-score-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.dash-section-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 36px;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---- 2-column grids (ATS issues, keywords) ---- */
+.dash-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.dash-ats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ---- Upload page ---- */
+.upload-dropzone {
+  padding: 56px 32px;
+}
+
+.upload-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* ───────────────────────────────────────────
+   Landing page responsiveness
+   ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .land-nav-links { display: none; }
+  .land-nav-pill { display: none; }
+
+  .land-hero {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  .land-hero-left {
+    border-right: none !important;
+    padding: 40px 24px !important;
+  }
+  .land-hero-right {
+    padding: 24px !important;
+  }
+
+  .land-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .land-steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .land-step-connector { display: none; }
+
+  .land-section { padding: 56px 24px !important; }
+  .land-logo-strip { padding: 16px 24px !important; flex-wrap: wrap; gap: 12px; }
+  .land-cta-box { padding: 40px 24px !important; }
+  .land-footer { flex-direction: column; gap: 14px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .land-nav { padding: 0 20px !important; }
+  .land-hero-left, .land-hero-right { padding: 28px 18px !important; }
+}
+
+/* ───────────────────────────────────────────
+   TABLET (≤ 900px) — app shell
+   ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .dash-page { padding: 20px; }
+
+  .dash-score-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .dash-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ───────────────────────────────────────────
+   MOBILE (≤ 640px)
+   ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  /* Sidebar becomes a horizontal bottom tab bar */
+  .app-sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    padding: 8px 10px;
+    gap: 2px;
+    order: 2; /* push to bottom */
+    position: sticky;
+    bottom: 0;
+    z-index: 40;
+    overflow-x: auto;
+  }
+
+  .app-sidebar .sidebar-logo-row {
+    display: none; /* hide logo in bottom bar to save space */
+  }
+
+  .app-sidebar .sidebar-spacer {
+    display: none;
+  }
+
+  .app-sidebar .sidebar-user {
+    display: none; /* user moves into Settings nav item only */
+  }
+
+  .app-sidebar .nav-item {
+    flex-direction: column;
+    gap: 2px;
+    padding: 6px 10px;
+    font-size: 10px;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .app-sidebar .nav-item i {
+    width: auto;
+    font-size: 18px;
+  }
+
+  .app-main {
+    order: 1;
+    max-height: none;
+  }
+
+  .dash-page {
+    padding: 16px;
+  }
+
+  .dash-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .dash-header button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dash-score-grid {
+    padding: 18px;
+  }
+
+  .upload-dropzone {
+    padding: 36px 18px;
+  }
+
+  .upload-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-section-row {
+    grid-template-columns: 100px 1fr 30px;
+    gap: 8px;
+  }
+
+  .dash-ats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .dash-section-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .dash-section-row > span:last-child {
+    text-align: left;
+  }
+}
