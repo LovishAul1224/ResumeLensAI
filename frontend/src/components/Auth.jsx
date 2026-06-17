@@ -97,6 +97,7 @@ export default function Auth({ page, onPageChange }) {
 
   return (
     <div
+    className="auth-container"
       style={{
         minHeight: "100vh",
         width: "100vw",
@@ -108,6 +109,7 @@ export default function Auth({ page, onPageChange }) {
     >
       {/* LEFT — gradient panel */}
       <motion.div
+      className="auth-left-panel"
   initial={{ opacity: 0, x: -24 }}
   animate={{
     opacity: 1,
@@ -224,6 +226,7 @@ export default function Auth({ page, onPageChange }) {
       {/* RIGHT — form */}
       {/* RIGHT — form */}
       <div
+      className="auth-right-panel"
         style={{
           background: "#f5f5f5", // or "#fff"
           padding: "32px 56px",
