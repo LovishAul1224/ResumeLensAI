@@ -33,3 +33,123 @@ body {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  /* Auth */
+  .auth-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .auth-left-panel {
+    display: none !important;
+  }
+
+  .auth-right-panel {
+    padding: 24px !important;
+  }
+
+  /* Landing */
+  .land-nav {
+    padding: 0 16px !important;
+  }
+
+  .land-nav-links,
+  .land-nav-pill {
+    display: none !important;
+  }
+
+  .land-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .land-hero-left,
+  .land-hero-right {
+    padding: 24px !important;
+    border-right: none !important;
+  }
+
+  .land-section {
+    padding: 48px 20px !important;
+  }
+
+  .land-logo-strip {
+    padding: 16px !important;
+  }
+
+  /* Dashboard */
+  .dashboard-score-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-two-col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* History */
+  .history-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Upload */
+  .upload-page {
+    padding: 20px !important;
+  }
+
+  /* Layout */
+  .app-shell {
+    flex-direction: column !important;
+  }
+
+  .app-sidebar {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px !important;
+    width: 100% !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    z-index: 999;
+  }
+
+  .sidebar-logo-row,
+  .sidebar-user,
+  .sidebar-spacer {
+    display: none !important;
+  }
+
+  .nav-item {
+    flex-direction: column !important;
+    gap: 2px !important;
+    font-size: 11px !important;
+  }
+
+  .app-main {
+    padding-bottom: 80px !important;
+  }
+
+  h1 {
+    font-size: clamp(28px, 7vw, 38px) !important;
+  }
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+  .land-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-score-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-two-col {
+    grid-template-columns: 1fr !important;
+  }
+}
