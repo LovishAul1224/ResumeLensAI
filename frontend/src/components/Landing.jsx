@@ -236,6 +236,7 @@ export default function Landing() {
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="land-nav"
         style={{
           display: "flex",
           alignItems: "center",
@@ -252,7 +253,7 @@ export default function Landing() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: "36px" }}>
           <Logo size={26} />
-          <div style={{ display: "flex", gap: "4px" }}>
+          <div className="land-nav-links" style={{ display: "flex", gap: "4px" }}>
             {["Product", "Pricing", "Blog", "Docs"].map((link) => (
               <a
                 key={link}
@@ -282,6 +283,7 @@ export default function Landing() {
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <div
+            className="land-nav-pill"
             style={{
               fontSize: "11px",
               color: "#666",
@@ -334,6 +336,7 @@ export default function Landing() {
       {/* ─── HERO ─── */}
       <section
         ref={heroRef}
+        className="land-hero"
         style={{
           display: "grid",
           gridTemplateColumns: "1.05fr 1fr",
@@ -346,6 +349,7 @@ export default function Landing() {
           initial="hidden"
           animate="visible"
           variants={stagger}
+          className="land-hero-left"
           style={{
             y: heroY,
             padding: "64px 48px",
@@ -531,6 +535,7 @@ export default function Landing() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="land-hero-right"
           style={{
             background: "#fafafa",
             padding: "36px 32px",
@@ -822,6 +827,7 @@ export default function Landing() {
 
       {/* ─── LOGO STRIP ─── */}
       <div
+        className="land-logo-strip"
         style={{
           borderBottom: "1px solid #f0f0f0",
           padding: "16px 48px",
@@ -843,7 +849,7 @@ export default function Landing() {
         >
           TRUSTED BY JOB SEEKERS GOING TO
         </span>
-        <div style={{ display: "flex", gap: "36px", alignItems: "center" }}>
+        <div style={{ display: "flex", gap: "36px", alignItems: "center", flexWrap: "wrap" }}>
           {logos.map((l) => (
             <span
               key={l}
@@ -863,6 +869,7 @@ export default function Landing() {
       {/* ─── FEATURES ─── */}
       <section
         id="features"
+        className="land-section"
         style={{ padding: "80px 48px", borderBottom: "1px solid #f0f0f0" }}
       >
         <motion.div
@@ -906,6 +913,7 @@ export default function Landing() {
 
           <motion.div
             variants={stagger}
+            className="land-grid-3"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
@@ -993,6 +1001,7 @@ export default function Landing() {
       {/* ─── HOW IT WORKS ─── */}
       <section
         id="how-it-works"
+        className="land-section"
         style={{
           padding: "80px 48px",
           background: "#fafafa",
@@ -1034,6 +1043,7 @@ export default function Landing() {
           </motion.div>
 
           <div
+            className="land-steps-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
@@ -1043,6 +1053,7 @@ export default function Landing() {
           >
             {/* connector lines */}
             <div
+              className="land-step-connector"
               style={{
                 position: "absolute",
                 top: "22px",
@@ -1053,6 +1064,7 @@ export default function Landing() {
               }}
             />
             <div
+              className="land-step-connector"
               style={{
                 position: "absolute",
                 top: "22px",
@@ -1125,6 +1137,7 @@ export default function Landing() {
 
       {/* ─── TESTIMONIALS ─── */}
       <section
+        className="land-section"
         style={{ padding: "80px 48px", borderBottom: "1px solid #f0f0f0" }}
       >
         <motion.div
@@ -1160,6 +1173,7 @@ export default function Landing() {
           </motion.div>
 
           <div
+            className="land-grid-3"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
@@ -1269,6 +1283,7 @@ export default function Landing() {
       {/* ─── PRICING ─── */}
       <section
         id="pricing"
+        className="land-section"
         style={{
           padding: "80px 48px",
           background: "#fafafa",
@@ -1308,6 +1323,7 @@ export default function Landing() {
           </motion.div>
 
           <div
+            className="land-grid-3"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
@@ -1495,6 +1511,7 @@ export default function Landing() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.4 }}
         variants={fadeUp}
+        className="land-section"
         style={{
           padding: "80px 48px",
           textAlign: "center",
@@ -1502,6 +1519,7 @@ export default function Landing() {
         }}
       >
         <div
+          className="land-cta-box"
           style={{
             maxWidth: "640px",
             margin: "0 auto",
@@ -1574,6 +1592,7 @@ export default function Landing() {
 
       {/* ─── FOOTER ─── */}
       <footer
+        className="land-footer"
         style={{
           padding: "28px 48px",
           display: "flex",
@@ -1583,7 +1602,7 @@ export default function Landing() {
         }}
       >
         <Logo size={22} />
-        <div style={{ display: "flex", gap: "24px" }}>
+        <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
           {["Privacy", "Terms", "Blog", "Docs", "Status"].map((l) => (
             <a
               key={l}
@@ -1598,7 +1617,6 @@ export default function Landing() {
             </a>
           ))}
         </div>
-        {/* <span style={{ fontSize: "12px", color: "#ccc" }}>© 2026 ResumeLens, Inc.</span> */}
         <span style={{ fontSize: "12px", color: "#ccc" }}>
           Made with ❤️ by Lovish Aul
         </span>
