@@ -34,6 +34,17 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
 
+/* Auth — base (desktop) grid; overridden to 1fr on mobile below */
+.auth-container {
+  grid-template-columns: 0.95fr 1.05fr;
+}
+.auth-right-panel {
+  padding: 32px 56px;
+}
+.auth-heading {
+  font-size: 38px;
+}
+
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -49,6 +60,11 @@ body {
 
   .auth-right-panel {
     padding: 24px !important;
+    min-height: 100vh !important;
+  }
+
+  .auth-heading {
+    font-size: 28px !important;
   }
 
   /* Landing */
@@ -151,5 +167,14 @@ body {
 
   .dashboard-two-col {
     grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .auth-heading {
+    font-size: 24px !important;
+  }
+  .auth-right-panel {
+    padding: 18px !important;
   }
 }
