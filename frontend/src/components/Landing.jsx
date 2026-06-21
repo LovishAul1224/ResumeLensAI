@@ -251,7 +251,7 @@ export default function Landing() {
           backdropFilter: "blur(12px)",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "36px" }}>
+        <div style={{ display: "flex", alignItems: "center",  gap: "clamp(12px,4vw,36px)"}}>
           <Logo size={26} />
           <div className="land-nav-links" style={{ display: "flex", gap: "4px" }}>
             {["Product", "Pricing", "Blog", "Docs"].map((link) => (
@@ -439,6 +439,7 @@ export default function Landing() {
           </motion.p>
 
           <motion.div
+            className="hero-buttons"
             variants={fadeUp}
             style={{ display: "flex", gap: "10px", alignItems: "center" }}
           >
@@ -538,11 +539,10 @@ export default function Landing() {
           className="land-hero-right"
           style={{
             background: "#fafafa",
-            padding: "36px 32px",
+            padding: "clamp(18px, 4vw, 36px)",
             display: "flex",
             flexDirection: "column",
             gap: "14px",
-            overflowY: "auto",
           }}
         >
           {/* Score header */}
@@ -893,7 +893,7 @@ export default function Landing() {
             </div>
             <h2
               style={{
-                fontSize: "36px",
+                fontSize: "clamp(28px,5vw,36px)",
                 fontWeight: 800,
                 letterSpacing: "-0.8px",
                 color: "#0a0a0a",
