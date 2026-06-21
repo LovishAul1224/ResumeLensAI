@@ -1,206 +1,205 @@
-/* ───────────────────────────────────────────
-   Responsive layout for the authenticated app
-   (Layout sidebar + Dashboard grids)
-   ─────────────────────────────────────────── */
+/* =====================================================
+   RESPONSIVE.CSS
+   ===================================================== */
 
-/* ---- App shell ---- */
-.app-shell {
-  display: flex;
+/* ---------- AUTH ---------- */
+
+.auth-container {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
   min-height: 100vh;
 }
 
-.app-sidebar {
-  width: 220px;
-  background: var(--bg2);
-  border-right: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  padding: 20px 14px;
-  gap: 4px;
-  flex-shrink: 0;
+.auth-right-panel {
+  padding: 32px 56px;
 }
 
-.app-main {
-  flex: 1;
-  overflow-y: auto;
-  max-height: 100vh;
-  min-width: 0; /* prevents flex children from overflowing on narrow screens */
+.auth-heading {
+  font-size: 38px;
 }
 
-/* ---- Dashboard page padding ---- */
-.dash-page {
-  padding: 28px 32px;
-}
 
-/* ---- Dashboard header ---- */
-.dash-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 24px;
-  padding: 16px 20px;
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
+/* =====================================================
+   LANDING PAGE
+   ===================================================== */
 
-/* ---- Score + breakdown grid ---- */
-.dash-score-grid {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 20px;
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 16px;
-}
-
-.dash-section-row {
-  display: grid;
-  grid-template-columns: 130px 1fr 36px;
-  align-items: center;
-  gap: 10px;
-}
-
-/* ---- 2-column grids (ATS issues, keywords) ---- */
-.dash-grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.dash-ats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-/* ---- Upload page ---- */
-.upload-dropzone {
-  padding: 56px 32px;
-}
-
-.upload-feature-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-/* ───────────────────────────────────────────
-   Landing page responsiveness
-   ─────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .land-nav-links { display: none; }
-  .land-nav-pill { display: none; }
+@media (max-width: 1024px) {
 
   .land-hero {
     grid-template-columns: 1fr !important;
     min-height: auto !important;
   }
+
   .land-hero-left {
     border-right: none !important;
-    padding: 40px 24px !important;
+    padding: 48px 32px !important;
   }
+
   .land-hero-right {
-    padding: 24px !important;
+    padding: 32px !important;
   }
 
   .land-grid-3 {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
   .land-steps-grid {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
-  .land-step-connector { display: none; }
 
-  .land-section { padding: 56px 24px !important; }
-  .land-logo-strip { padding: 16px 24px !important; flex-wrap: wrap; gap: 12px; }
-  .land-cta-box { padding: 40px 24px !important; }
-  .land-footer { flex-direction: column; gap: 14px; text-align: center; }
+  .land-step-connector {
+    display: none !important;
+  }
+
+  .land-section {
+    padding: 64px 32px !important;
+  }
+
+  .land-logo-strip {
+    padding: 16px 32px !important;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .land-cta-box {
+    padding: 48px 32px !important;
+  }
+
+  .land-footer {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
 }
 
-@media (max-width: 480px) {
-  .land-nav { padding: 0 20px !important; }
-  .land-hero-left, .land-hero-right { padding: 28px 18px !important; }
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* ---------- NAV ---------- */
+
+  .land-nav {
+    padding: 0 16px !important;
+  }
+
+  .land-nav-links,
+  .land-nav-pill {
+    display: none !important;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .land-hero-left {
+    padding: 36px 20px !important;
+    gap: 16px !important;
+  }
+
+  .land-hero-right {
+    padding: 20px !important;
+  }
+
+  /* ---------- FEATURES ---------- */
+
+  .land-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---------- SECTIONS ---------- */
+
+  .land-section {
+    padding: 56px 20px !important;
+  }
+
+  .land-logo-strip {
+    padding: 16px 20px !important;
+  }
+
+  .land-cta-box {
+    padding: 32px 20px !important;
+  }
+
+  /* ---------- TYPOGRAPHY ---------- */
+
+  h1 {
+    font-size: clamp(32px, 8vw, 42px) !important;
+    line-height: 1.1 !important;
+  }
+
+  h2 {
+    font-size: clamp(28px, 7vw, 36px) !important;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  /* ---------- BUTTON GROUPS ---------- */
+
+  .hero-buttons {
+    flex-direction: column !important;
+    width: 100%;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+  }
+
+  /* ---------- TRUST BADGES ---------- */
+
+  .land-logo-strip span {
+    text-align: center;
+  }
+
+  /* ---------- AUTH ---------- */
+
+  .auth-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .auth-left-panel {
+    display: none !important;
+  }
+
+  .auth-right-panel {
+    padding: 24px !important;
+    min-height: 100vh;
+  }
+
+  .auth-heading {
+    font-size: 30px !important;
+  }
 }
 
-/* ───────────────────────────────────────────
-   TABLET (≤ 900px) — app shell
-   ─────────────────────────────────────────── */
+
+/* =====================================================
+   DASHBOARD
+   ===================================================== */
+
 @media (max-width: 900px) {
-  .dash-page { padding: 20px; }
+
+  .dash-page {
+    padding: 20px;
+  }
 
   .dash-score-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: 1fr !important;
   }
 
   .dash-grid-2 {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+  }
+
+  .dash-ats-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
-/* ───────────────────────────────────────────
-   MOBILE (≤ 640px)
-   ─────────────────────────────────────────── */
+
 @media (max-width: 640px) {
-  .app-shell {
-    flex-direction: column;
-  }
-
-  /* Sidebar becomes a horizontal bottom tab bar */
-  .app-sidebar {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    align-items: center;
-    border-right: none;
-    border-top: 1px solid var(--border);
-    padding: 8px 10px;
-    gap: 2px;
-    order: 2; /* push to bottom */
-    position: sticky;
-    bottom: 0;
-    z-index: 40;
-    overflow-x: auto;
-  }
-
-  .app-sidebar .sidebar-logo-row {
-    display: none; /* hide logo in bottom bar to save space */
-  }
-
-  .app-sidebar .sidebar-spacer {
-    display: none;
-  }
-
-  .app-sidebar .sidebar-user {
-    display: none; /* user moves into Settings nav item only */
-  }
-
-  .app-sidebar .nav-item {
-    flex-direction: column;
-    gap: 2px;
-    padding: 6px 10px;
-    font-size: 10px;
-    flex: 1;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  .app-sidebar .nav-item i {
-    width: auto;
-    font-size: 18px;
-  }
-
-  .app-main {
-    order: 1;
-    max-height: none;
-  }
 
   .dash-page {
     padding: 16px;
@@ -222,6 +221,11 @@
     padding: 18px;
   }
 
+  .dash-section-row {
+    grid-template-columns: 100px 1fr 30px;
+    gap: 8px;
+  }
+
   .upload-dropzone {
     padding: 36px 18px;
   }
@@ -229,23 +233,102 @@
   .upload-feature-grid {
     grid-template-columns: 1fr;
   }
+}
 
-  .dash-section-row {
-    grid-template-columns: 100px 1fr 30px;
-    gap: 8px;
+
+/* =====================================================
+   APP LAYOUT
+   ===================================================== */
+
+@media (max-width: 640px) {
+
+  .app-shell {
+    flex-direction: column;
   }
 
-  .dash-ats-grid {
-    grid-template-columns: 1fr;
+  .app-sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    height: 68px;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-around;
+
+    border-top: 1px solid var(--border);
+    border-right: none;
+
+    background: var(--bg2);
+
+    z-index: 999;
+    padding: 6px 10px;
+  }
+
+  .sidebar-logo-row,
+  .sidebar-user,
+  .sidebar-spacer {
+    display: none !important;
+  }
+
+  .nav-item {
+    flex-direction: column !important;
+    gap: 2px !important;
+
+    font-size: 10px !important;
+
+    flex: 1;
+    text-align: center;
+  }
+
+  .nav-item i {
+    font-size: 18px !important;
+  }
+
+  .app-main {
+    padding-bottom: 90px;
   }
 }
 
-@media (max-width: 400px) {
+
+/* =====================================================
+   EXTRA SMALL DEVICES
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+  .auth-right-panel {
+    padding: 18px !important;
+  }
+
+  .auth-heading {
+    font-size: 26px !important;
+  }
+
+  .land-hero-left,
+  .land-hero-right {
+    padding: 18px !important;
+  }
+
+  .land-section {
+    padding: 48px 16px !important;
+  }
+}
+
+
+@media (max-width: 380px) {
+
   .dash-section-row {
     grid-template-columns: 1fr;
     gap: 4px;
   }
-  .dash-section-row > span:last-child {
+
+  .dash-section-row span:last-child {
     text-align: left;
   }
 }
