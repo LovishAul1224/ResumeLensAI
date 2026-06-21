@@ -1,180 +1,191 @@
 @import "tailwindcss";
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ==========================================
+   RESET
+========================================== */
 
-:root {
-  --bg:      #0a0a0f;
-  --bg2:     #111118;
-  --bg3:     #1a1a24;
-  --bg4:     #22222f;
-  --border:  rgba(255,255,255,0.08);
-  --border2: rgba(255,255,255,0.14);
-  --text:    #f0eff8;
-  --text2:   #a09fba;
-  --text3:   #5e5d7a;
-  --purple:  #7c6af7;
-  --purple2: #a394ff;
-  --purple3: #3d3580;
-  --purple4: #1e1a40;
-  --green:   #22c97a;
-  --red:     #f05252;
-  --amber:   #f59e0b;
-  --blue:    #38bdf8;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
-
-/* Auth — base (desktop) grid; overridden to 1fr on mobile below */
-.auth-container {
-  grid-template-columns: 0.95fr 1.05fr;
-}
-.auth-right-panel {
-  padding: 32px 56px;
-}
-.auth-heading {
-  font-size: 38px;
+#root {
+  min-height: 100vh;
 }
 
+/* ==========================================
+   THEME VARIABLES
+========================================== */
 
-/* MOBILE */
-@media (max-width: 768px) {
+:root {
+  --bg: #0a0a0f;
+  --bg2: #111118;
+  --bg3: #1a1a24;
+  --bg4: #22222f;
 
-  /* Auth */
-  .auth-container {
-    grid-template-columns: 1fr !important;
-  }
+  --border: rgba(255, 255, 255, 0.08);
+  --border2: rgba(255, 255, 255, 0.14);
 
-  .auth-left-panel {
-    display: none !important;
-  }
+  --text: #f0eff8;
+  --text2: #a09fba;
+  --text3: #5e5d7a;
 
-  .auth-right-panel {
-    padding: 24px !important;
-    min-height: 100vh !important;
-  }
+  --purple: #7c6af7;
+  --purple2: #a394ff;
+  --purple3: #3d3580;
+  --purple4: #1e1a40;
 
-  .auth-heading {
-    font-size: 28px !important;
-  }
+  --green: #22c97a;
+  --red: #f05252;
+  --amber: #f59e0b;
+  --blue: #38bdf8;
+}
 
-  /* Landing */
-  .land-nav {
-    padding: 0 16px !important;
-  }
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
 
-  .land-nav-links,
-  .land-nav-pill {
-    display: none !important;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  line-height: 1.15;
+  font-weight: 700;
+}
 
-  .land-hero {
-    grid-template-columns: 1fr !important;
-  }
+p {
+  line-height: 1.7;
+}
 
-  .land-hero-left,
-  .land-hero-right {
-    padding: 24px !important;
-    border-right: none !important;
-  }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  .land-section {
-    padding: 48px 20px !important;
-  }
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
 
-  .land-logo-strip {
-    padding: 16px !important;
-  }
+button {
+  cursor: pointer;
+}
 
-  /* Dashboard */
-  .dashboard-score-grid {
-    grid-template-columns: 1fr !important;
-  }
+/* ==========================================
+   IMAGES
+========================================== */
 
-  .dashboard-two-col {
-    grid-template-columns: 1fr !important;
-  }
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
 
-  /* History */
-  .history-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
+/* ==========================================
+   FORMS
+========================================== */
 
-  /* Upload */
-  .upload-page {
-    padding: 20px !important;
-  }
+input,
+textarea,
+select {
+  outline: none;
+  border: none;
+}
 
-  /* Layout */
-  .app-shell {
-    flex-direction: column !important;
-  }
+input::placeholder,
+textarea::placeholder {
+  color: var(--text3);
+}
 
-  .app-sidebar {
-    position: fixed !important;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 64px !important;
-    width: 100% !important;
-    flex-direction: row !important;
-    justify-content: space-around !important;
-    z-index: 999;
-  }
+/* ==========================================
+   SCROLLBAR
+========================================== */
 
-  .sidebar-logo-row,
-  .sidebar-user,
-  .sidebar-spacer {
-    display: none !important;
-  }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
 
-  .nav-item {
-    flex-direction: column !important;
-    gap: 2px !important;
-    font-size: 11px !important;
-  }
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-  .app-main {
-    padding-bottom: 80px !important;
-  }
+::-webkit-scrollbar-thumb {
+  background: var(--bg4);
+  border-radius: 999px;
+}
 
-  h1 {
-    font-size: clamp(28px, 7vw, 38px) !important;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple3);
+}
+
+/* ==========================================
+   COMMON UTILITIES
+========================================== */
+
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--purple),
+    #c084fc,
+    #f472b6
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-container {
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
-/* TABLET */
-@media (max-width: 1024px) {
-
-  .land-hero {
-    grid-template-columns: 1fr !important;
-  }
-
-  .dashboard-score-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .dashboard-two-col {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-@media (max-width: 380px) {
-  .auth-heading {
-    font-size: 24px !important;
-  }
-  .auth-right-panel {
-    padding: 18px !important;
-  }
+.spin {
+  animation: spin 1s linear infinite;
 }
