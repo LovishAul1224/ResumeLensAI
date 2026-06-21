@@ -1,6 +1,6 @@
 export default function Settings({ user, onLogout }) {
   return (
-    <div style={{ padding: "28px 32px" }}>
+    <div className="dash-page">
       <div style={{ marginBottom: "28px" }}>
         <h1 style={{ fontSize: "22px", fontWeight: 600, marginBottom: "4px" }}>Settings</h1>
         <p style={{ fontSize: "13px", color: "var(--text2)" }}>Manage your account and preferences</p>

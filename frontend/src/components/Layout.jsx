@@ -13,16 +13,11 @@ export default function Layout({ children, page, onNav, user, hasResult }) {
     : "??";
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
-      {/* Sidebar */}
-      <nav style={{
-        width: "220px", background: "var(--bg2)",
-        borderRight: "1px solid var(--border)",
-        display: "flex", flexDirection: "column",
-        padding: "20px 14px", gap: "4px", flexShrink: 0,
-      }}>
+    <div className="app-shell">
+      {/* Sidebar — becomes a bottom tab bar on mobile via responsive.css */}
+      <nav className="app-sidebar">
         {/* Logo */}
-        <div style={{ display: "flex", alignItems: "center", padding: "8px 10px 20px" }}>
+        <div className="sidebar-logo-row" style={{ display: "flex", alignItems: "center", padding: "8px 10px 20px" }}>
           <Logo size={26} textColor="#f0eff8" />
         </div>
 
@@ -30,6 +25,7 @@ export default function Layout({ children, page, onNav, user, hasResult }) {
         {navItems.map(item => (
           <button
             key={item.id}
+            className="nav-item"
             onClick={() => onNav(item.id)}
             style={{
               display: "flex", alignItems: "center", gap: "8px",
@@ -46,10 +42,11 @@ export default function Layout({ children, page, onNav, user, hasResult }) {
           </button>
         ))}
 
-        <div style={{ flex: 1 }} />
+        <div className="sidebar-spacer" style={{ flex: 1 }} />
 
         {/* User */}
         <div
+          className="sidebar-user"
           onClick={() => onNav("settings")}
           style={{
             display: "flex", alignItems: "center", gap: "8px",
@@ -76,7 +73,7 @@ export default function Layout({ children, page, onNav, user, hasResult }) {
       </nav>
 
       {/* Main */}
-      <main style={{ flex: 1, overflowY: "auto", maxHeight: "100vh" }}>
+      <main className="app-main">
         {children}
       </main>
     </div>
