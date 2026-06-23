@@ -13,7 +13,7 @@ if not _api_key:
     raise RuntimeError("GEMINI_API_KEY is not set. Add it to backend/.env")
 
 genai.configure(api_key=_api_key)
-model = genai.GenerativeModel("gemini-2.5-flash")
+model = genai.GenerativeModel("gemini-3-flash-preview")
 
 
 def extract_text(file_path: str, ext: str) -> dict:
